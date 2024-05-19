@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/05/19 09:38:02 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/05/19 18:38:06 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ int ft_printf(const char *format, ...)
             }
             else if (format[i] == 'p')
             {
-                ft_putstr("0x");
+                total_len += ft_putstr("0x");
                 total_len += ft_putnbr_base(va_arg(args, uintptr_t), "0123456789abcdef", 16);
             }
             else if (format[i] == 'x')
             {
-                total_len += ft_putnbr_base((uintptr_t)va_arg(args, unsigned int), "0123456789abcdef", 16);
+                total_len += ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", 16);
             }
         }
         else
@@ -56,6 +56,7 @@ int ft_printf(const char *format, ...)
 
 int main()
 {
+    printf("%lu\n", sizeof(va_list));
     // char *arg_1 = "asdfg";
     // int arg_2 = 12;
     // double arg_3 = 3.14;
@@ -71,7 +72,7 @@ int main()
     // int j = printf("%p\n", test1);
     // printf("ft: %d, lib: %d", i, j);
     
-    unsigned int test = 12;
+    unsigned int test = 12345678;
     int i = ft_printf("%x\n", test);
     int j = printf("%x\n", test);
     printf("ft: %d, lib: %d", i, j);
