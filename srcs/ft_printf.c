@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/05/17 20:58:27 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/05/19 09:38:02 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int ft_printf(const char *format, ...)
     size_t i = 0;
     int total_len = 0;
     
-    // printf("%s\n", format);
     va_start(args, format);
-    // printf("arg_2: %d\n", va_arg(args, int));
-    // printf("arg_3: %d\n", va_arg(args, int));
     while (format[i] != '\0')
     {
         if (format[i] == '%')
@@ -38,7 +35,12 @@ int ft_printf(const char *format, ...)
             }
             else if (format[i] == 'p')
             {
-                total_len += ft_putptr(va_arg(args, char *));
+                ft_putstr("0x");
+                total_len += ft_putnbr_base(va_arg(args, uintptr_t), "0123456789abcdef", 16);
+            }
+            else if (format[i] == 'x')
+            {
+                total_len += ft_putnbr_base((uintptr_t)va_arg(args, unsigned int), "0123456789abcdef", 16);
             }
         }
         else
@@ -64,8 +66,20 @@ int main()
     // int i = ft_printf("%s\n", "sdf");
     // int j = printf("%s\n", "sdf");
     
-    char *test = "1234567890";
-    // int i = ft_printf("%p\n", test);
-    int j = printf("%p\n", test);
+    // char *test1 = "1234567890";
+    // int i = ft_printf("%p\n", test1);
+    // int j = printf("%p\n", test1);
     // printf("ft: %d, lib: %d", i, j);
+    
+    unsigned int test = 12;
+    int i = ft_printf("%x\n", test);
+    int j = printf("%x\n", test);
+    printf("ft: %d, lib: %d", i, j);
+
+    // unsigned long x = 0x10434bfa8;
+    // while (x >= 1)
+    // {
+    //     printf("%c", "0123456789abcdef"[x % 16]);
+    //     x /= 16;
+    // }
 }
