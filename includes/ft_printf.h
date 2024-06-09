@@ -6,12 +6,16 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:50:53 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 18:15:59 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/09 18:23:38 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# define D_B "0123456789"
+# define L_H_B "0123456789abcdef"
+# define U_H_B "0123456789ABCDEF"
 
 # include <stdarg.h>
 # include <unistd.h>

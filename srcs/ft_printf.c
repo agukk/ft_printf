@@ -6,21 +6,20 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 18:14:33 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/09 18:27:13 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	i;
-	int		total_len;
+	int		len;
 
 	i = 0;
-	total_len = 0;
+	len = 0;
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
@@ -28,52 +27,34 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
-			{
-				total_len += ft_putchar(va_arg(args, int));
-			}
+				len += ft_putchar(va_arg(args, int));
 			else if (format[i] == 's')
-			{
-				total_len += ft_putstr(va_arg(args, char *));
-			}
+				len += ft_putstr(va_arg(args, char *));
 			else if (format[i] == 'p')
 			{
-				total_len += ft_putstr("0x");
-				total_len += ft_putnbr_base(va_arg(args, uintptr_t),
-						"0123456789abcdef", 16);
+				len += ft_putstr("0x");
+				len += ft_putnbr_base(va_arg(args, uintptr_t), L_H_B, 16);
 			}
 			else if (format[i] == 'x')
-			{
-				total_len += ft_putnbr_base(va_arg(args, unsigned int),
-						"0123456789abcdef", 16);
-			}
+				len += ft_putnbr_base(va_arg(args, unsigned int), L_H_B, 16);
 			else if (format[i] == 'X')
-			{
-				total_len += ft_putnbr_base(va_arg(args, unsigned int),
-						"0123456789ABCDEF", 16);
-			}
+				len += ft_putnbr_base(va_arg(args, unsigned int), U_H_B, 16);
 			else if (format[i] == 'u')
-			{
-				total_len += ft_putnbr_base(va_arg(args, unsigned int),
-						"0123456789", 10);
-			}
+				len += ft_putnbr_base(va_arg(args, unsigned int), D_B, 10);
 			else if (format[i] == 'i' || format[i] == 'd')
-			{
-				total_len += ft_putnbr(va_arg(args, int));
-			}
+				len += ft_putnbr(va_arg(args, int));
 			else if (format[i] == '%')
-			{
-				total_len += ft_putchar('%');
-			}
+				len += ft_putchar('%');
 		}
 		else
-		{
-			total_len += ft_putchar(format[i]);
-		}
+			len += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (total_len);
+	return (len);
 }
+
+// #include <stdio.h>
 
 // int main()
 // {
