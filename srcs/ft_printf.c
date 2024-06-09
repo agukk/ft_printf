@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 11:03:00 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/09 17:46:09 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,22 @@ int ft_printf(const char *format, ...)
             {
                 total_len += ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", 16);
             }
+            else if (format[i] == 'X')
+            {
+                total_len += ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", 16);
+            }
+            else if (format[i] == 'u')
+            {
+                total_len += ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 10);
+            }
+            else if (format[i] == 'i' || format[i] == 'd')
+            {
+                total_len += ft_putnbr(va_arg(args, int));
+            }
+            else if (format[i] == '%')
+            {
+                total_len += ft_putchar('%');
+            }
         }
         else
         {
@@ -56,7 +72,7 @@ int ft_printf(const char *format, ...)
 
 int main()
 {
-    printf("%lu\n", sizeof(va_list));
+    // printf("%lu\n", sizeof(va_list));
     // char *arg_1 = "asdfg";
     // int arg_2 = 12;
     // double arg_3 = 3.14;
@@ -66,25 +82,38 @@ int main()
     
     // int i = ft_printf("%s\n", "sdf");
     // int j = printf("%s\n", "sdf");
+    
     // char *test1 = "1234567890";
-    // int i = ft_printf("%p\n", test1);
-    // int j = printf("%p\n", test1);
+    // int i = ft_printf("made : %p\n", test1);
+    // int j = printf("real : %p\n", test1);
     // printf("ft: %d, lib: %d", i, j);
     
-    unsigned int test = 12345678;
-    int i = ft_printf("%x\n", test);
-    int j = printf("%x\n", test);
-    printf("ft: %d, lib: %d", i, j);
-    
-    // unsigned int test = 12;
+    // unsigned int test = 0;
     // int i = ft_printf("%x\n", test);
     // int j = printf("%x\n", test);
     // printf("ft: %d, lib: %d", i, j);
-
-    // unsigned long x = 0x10434bfa8;
-    // while (x >= 1)
-    // {
-    //     printf("%c", "0123456789abcdef"[x % 16]);
-    //     x /= 16;
-    // }
+    
+    // unsigned int test = -1;
+    // int i = ft_printf("%X\n", test);
+    // int j = printf("%X\n", test);
+    // printf("ft: %d, lib: %d", i, j);
+    
+    // int test = 1241241;
+    // int i = ft_printf("%i\n", test);
+    // int j = printf("%i\n", test);
+    // printf("ft: %d, lib: %d", i, j);
+    
+    int test = -123;
+    int i = ft_printf("%d\n", test);
+    int j = printf("%d\n", test);
+    printf("ft: %d, lib: %d", i, j);
+    
+    // int test = 3123;
+    // int i = ft_printf("%u\n", test);
+    // int j = printf("%u\n", test);
+    // printf("ft: %d, lib: %d", i, j);
+    
+    // int i = ft_printf("%%%%\n");
+    // int j = printf("%%%%\n");
+    // printf("ft: %d, lib: %d", i, j);
 }
