@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 12:45:07 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 17:48:30 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/10 07:48:48 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_putnbr_base(uintptr_t address, char *base, size_t base_len)
 {
 	if (address >= base_len)
 		ft_putnbr_base(address / base_len, base, base_len);
-
 	ft_putchar(base[address % base_len]);
 	return (ft_ptrlen(address, base_len));
 }

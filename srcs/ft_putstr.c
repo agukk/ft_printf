@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 20:40:44 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 18:13:47 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/10 07:48:34 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_putstr(char *str)
 {
-	size_t i = 0;
+	size_t	i;
 
+	i = 0;
 	if (str == NULL)
 		return (write(1, "(null)", 6));
-
 	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);

@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:45:12 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 17:52:26 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/10 07:48:44 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_intlen(int n)
 
 int	ft_putnbr(int n)
 {
-	long long nbr;
+	long long	nbr;
 
 	nbr = n;
 	if (nbr < 0)

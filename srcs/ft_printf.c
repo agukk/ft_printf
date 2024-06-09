@@ -24,10 +24,10 @@ int	ft_printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
-        {
-            i++;
+		{
+			i++;
 			len += ft_handle_format(&args, format[i]);
-        }
+		}
 		else
 			len += ft_putchar(format[i]);
 		i++;
