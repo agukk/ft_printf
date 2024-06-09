@@ -6,10 +6,11 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 11:01:48 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/09 11:03:00 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/ft_printf.h"
 #include <stdio.h>
 
 int ft_printf(const char *format, ...)
