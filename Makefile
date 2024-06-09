@@ -6,7 +6,8 @@ M_SOURCES = srcs/ft_printf.c \
 			srcs/ft_putchar.c \
 			srcs/ft_putnbr_base.c \
 			srcs/ft_putstr.c \
-			srcs/ft_putnbr.c
+			srcs/ft_putnbr.c \
+			srcs/ft_handle_format.c
 OBJECTS = $(M_SOURCES:.c=.o)
 RM = rm -f
 
