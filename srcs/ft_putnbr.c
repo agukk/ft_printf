@@ -14,7 +14,7 @@
 
 static int	ft_intlen(int n)
 {
-	int		len;
+	int			len;
 	long long	num;
 
 	len = 1;
@@ -34,7 +34,7 @@ static int	ft_intlen(int n)
 
 int	ft_putnbr(int n)
 {
-	long long	nbr;
+	long long nbr;
 
 	nbr = n;
 	if (nbr < 0)
@@ -51,5 +51,5 @@ int	ft_putnbr(int n)
 	{
 		ft_putchar(nbr + '0');
 	}
-    return ft_intlen(n);
+	return (ft_intlen(n));
 }
