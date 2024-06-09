@@ -6,7 +6,7 @@
 /*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/05/19 09:38:02 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/06/09 10:46:35 by kentakato        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,15 @@ int main()
     // int i = ft_printf("%s\n", "sdf");
     // int j = printf("%s\n", "sdf");
     
-    // char *test1 = "1234567890";
-    // int i = ft_printf("%p\n", test1);
-    // int j = printf("%p\n", test1);
-    // printf("ft: %d, lib: %d", i, j);
-    
-    unsigned int test = 12;
-    int i = ft_printf("%x\n", test);
-    int j = printf("%x\n", test);
+    char *test1 = "1234567890";
+    int i = ft_printf("ft : %p\n", test1);
+    int j = printf("lib : %p\n", test1);
     printf("ft: %d, lib: %d", i, j);
+    
+    // unsigned int test = 12;
+    // int i = ft_printf("%x\n", test);
+    // int j = printf("%x\n", test);
+    // printf("ft: %d, lib: %d", i, j);
 
     // unsigned long x = 0x10434bfa8;
     // while (x >= 1)

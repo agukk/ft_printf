@@ -2,7 +2,10 @@ CC = cc
 INCLUDES = includes
 CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
 NAME = libftprintf.a
-M_SOURCES = 
+M_SOURCES = srcs/ft_printf.c \
+			srcs/ft_putchar.c \
+			srcs/ft_putnbr_base.c \
+			srcs/ft_putstr.c
 OBJECTS = $(M_SOURCES:.c=.o)
 RM = rm -f
 
