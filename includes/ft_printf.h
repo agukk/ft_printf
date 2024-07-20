@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:50:53 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 18:46:23 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/07/20 15:06:58 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define U_H_B "0123456789ABCDEF"
 
 # include <stdarg.h>
+# include <stdint.h>
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
