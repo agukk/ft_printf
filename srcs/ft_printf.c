@@ -6,7 +6,7 @@
 /*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/20 11:38:19 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/09/20 11:50:32 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	ft_printf(const char *format, ...)
 // 	ft = ft_printf("%p, %p\n", &test1, &test2);
 // 	printf("lib: %d, ft: %d\n", lib, ft);
 // }
-
 
 // #include <stdio.h>
 

@@ -6,7 +6,7 @@
 /*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:21:17 by kenkato           #+#    #+#             */
-/*   Updated: 2024/09/20 11:36:37 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/09/20 11:50:19 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	ft_putptr(uintptr_t number, char *base, size_t base_len)
 	ft_putchar(base[number % base_len]);
 	return (ft_ptrlen(number, base_len));
 }
-
 
 int	ft_handle_pointer(va_list *args)
 {
