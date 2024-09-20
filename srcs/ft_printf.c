@@ -6,7 +6,7 @@
 /*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/09/19 21:15:17 by kenkato          ###   ########.fr       */
+/*   Updated: 2024/09/20 11:38:19 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
+
+// #include <stdio.h>
+// #include <limits.h>
+
+// int main()
+// {
+// 	long test1 = LONG_MIN;
+// 	long test2 = LONG_MAX;
+// 	int lib;
+// 	int ft;
+// 	lib = printf("%p, %p\n", &test1, &test2);
+// 	ft = ft_printf("%p, %p\n", &test1, &test2);
+// 	printf("lib: %d, ft: %d\n", lib, ft);
+// }
+
 
 // #include <stdio.h>
 
