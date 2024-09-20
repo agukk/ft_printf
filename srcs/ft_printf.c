@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:59:03 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/09 18:48:49 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/19 21:15:17 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
+	if (ft_is_vaild_format(format))
+		return (0);
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
@@ -38,51 +40,66 @@ int	ft_printf(const char *format, ...)
 
 // #include <stdio.h>
 
-// int main()
+// int	main(void)
 // {
-//     printf("%lu\n", sizeof(va_list));
-//     char *arg_1 = "asdfg";
-//     int arg_2 = 12;
-//     double arg_3 = 3.14;
+// 	int	dummy;
+// 	int	dummy1;
+// 	int	dummy2;
+// 	int i;
+// 	int j;
+// 	int test;
+// 	unsigned int test0;
+// 	char *test1;
 
-//     int i = ft_printf("%c\n", 65);
-//     int j = printf("%c\n", 65);
+// 	i = ft_printf("%c\n", 65);
+// 	j = printf("%c\n", 65);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     int i = ft_printf("%s\n", (char *)NULL);
-//     int j = printf("%s\n", (char *)NULL);
-//     printf("ft: %d, lib: %d", i, j);
+// 	i = ft_printf("%s\n", (char *)NULL);
+// 	j = printf("%s\n", (char *)NULL);
+// 	printf("ft: %d, lib: %d\n", i, j);
+// 	i = ft_printf("%s\n", "Json");
+// 	j = printf("%s\n", "Json");
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     char *test1 = "1234567890";
-//     int i = ft_printf("made : %p\n", test1);
-//     int j = printf("real : %p\n", test1);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test1 = NULL;
+// 	test1 = "oiiiii";
+// 	i = ft_printf("made : %p\n", test1);
+// 	j = printf("real : %p\n", test1);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     unsigned int test = 0;
-//     int i = ft_printf("%x\n", test);
-//     int j = printf("%x\n", test);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test = -2147483648;
+// 	i = ft_printf("%d\n", test);
+// 	j = printf("%d\n", test);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     unsigned int test = -1;
-//     int i = ft_printf("%X\n", test);
-//     int j = printf("%X\n", test);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test = 2147483647;
+// 	i = ft_printf("%i\n", test);
+// 	j = printf("%i\n", test);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     int test = 1241241;
-//     int i = ft_printf("%i\n", test);
-//     int j = printf("%i\n", test);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test = 2147483647;
+// 	i = ft_printf("%u\n", test);
+// 	j = printf("%u\n", test);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     int test = 12334234;
-//     int i = ft_printf("%d\n", test);
-//     int j = printf("%d\n", test);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test = -2147483648;
+// 	i = ft_printf("%x\n", test);
+// 	j = printf("%x\n", test);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     int test = 3123;
-//     int i = ft_printf("%u\n", test);
-//     int j = printf("%u\n", test);
-//     printf("ft: %d, lib: %d", i, j);
+// 	test0 = -1;
+// 	i = ft_printf("%X\n", test0);
+// 	j = printf("%X\n", test0);
+// 	printf("ft: %d, lib: %d\n", i, j);
 
-//     int i = ft_printf("%%%%\n");
-//     int j = printf("%%%%\n");
-//     printf("ft: %d, lib: %d", i, j);
+// 	i = ft_printf("%%%", "sf");
+// 	j = printf("%%%", "sf");
+// 	printf("ft: %d, lib: %d\n", i, j);
+
+// 	dummy = 10;
+// 	dummy1 = 12;
+// 	dummy2 = 12;
+// 	ft_printf("%d, %a, %d", dummy, dummy1, dummy2);
+// 	printf("%d, %a, %d", dummy, dummy1, dummy2);
 // }

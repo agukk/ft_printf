@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kentakato <kentakato@student.42.fr>        +#+  +:+       +#+        */
+/*   By: kenkato <kenkato@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 12:45:07 by kentakato         #+#    #+#             */
-/*   Updated: 2024/06/10 07:48:48 by kentakato        ###   ########.fr       */
+/*   Updated: 2024/09/19 19:38:32 by kenkato          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_ptrlen(uintptr_t address, size_t base_len)
+static int	ft_numlen(unsigned int number, size_t base_len)
 {
 	int	len;
 
 	len = 0;
-	if (address == 0)
+	if (number == 0)
 		return (1);
-	while (address > 0)
+	while (number > 0)
 	{
-		address /= base_len;
+		number /= base_len;
 		len++;
 	}
 	return (len);
 }
 
-int	ft_putnbr_base(uintptr_t address, char *base, size_t base_len)
+int	ft_putnbr_base(unsigned int number, char *base, size_t base_len)
 {
-	if (address >= base_len)
-		ft_putnbr_base(address / base_len, base, base_len);
-	ft_putchar(base[address % base_len]);
-	return (ft_ptrlen(address, base_len));
+	if (number >= base_len)
+		ft_putnbr_base(number / base_len, base, base_len);
+	ft_putchar(base[number % base_len]);
+	return (ft_numlen(number, base_len));
 }
